@@ -27,6 +27,7 @@ As part of security and performance upgrades on Covary-encoder, obfuscation freq
 ### Runtime reconstruction
  ```
 # Reconstruct the runtime directory
+import os
 %cd Active
 os.mkdir("codeenigma_runtime")
 !mv /content/Covary-encoder/Active/__init__.py /content/Covary-encoder/Active/codeenigma_runtime
