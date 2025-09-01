@@ -15,7 +15,7 @@ Updates and improvements in Covary-encoder are released in a per quarter basis, 
 ## Obfuscation frequency
 As part of security and performance upgrades on Covary-encoder, obfuscation frequency will also occur in a per quarter basis, unless specified in an obfuscation report/release.
 
-## Sample implementation (_in Covary_)
+## Sample implementation (_in Covary v2.0_)
 ### Clone
  ```
 # Clone Covary-encoder in Google Colab
