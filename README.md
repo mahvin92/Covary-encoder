@@ -10,17 +10,44 @@ The Covary-encoder was built on TIPs-VF by [De los Santos, 2025](https://doi.org
 ![TIPs-VF model](https://github.com/user-attachments/assets/c4cee570-48e9-4d5a-9ed5-e2ef9e87b100)
 
 ## Covary-encoder updates
-Updates and improvements in Covary-encoder are release in a per quarter basis, unless critical security and bug issues are found that warrant unscheduled updates. Covary-encoder updates will also include significant updates made to TIPs-VF and CodeEnigma, if available.
+Updates and improvements in Covary-encoder are released in a per quarter basis, unless critical security and bug issues are found that warrant unscheduled updates. Covary-encoder updates will also include significant improvements made to TIPs-VF and CodeEnigma, if available.
 
 ## Obfuscation frequency
 As part of security and performance upgrades on Covary-encoder, obfuscation frequency will also occur in a per quarter basis, unless specified in an obfuscation report/release.
 
 ## Sample implementation (_in Covary_)
-### Installation
-### Usage
+### Clone
+ ```
+# Clone Covary-encoder in Google Colab
+!git clone https://github.com/mahvin92/Covary-encoder.git
+%cd Covary-encoder
+!git sparse-checkout init --cone
+!git sparse-checkout set Active README.md
+ ``` 
+### Runtime reconstruction
+ ```
+# Reconstruct the runtime directory
+%cd Active
+os.mkdir("codeenigma_runtime")
+!mv /content/Covary-encoder/Active/__init__.py /content/Covary-encoder/Active/codeenigma_runtime
+ ```
+### Run Covary-encoder
+ ```
+# Feed your fasta file, containing the sequences to the Covary-encoder directory
+!mv /content/[your fasta-formatted input] /content/Covary-encoder/
+%cd /content/Covary-encoder/
+!pip install /content/Covary-encoder/Active/codeenigma_runtime-*.whl
+
+# Prevents premature exit
+import sys, builtins
+builtins.exit = sys.exit
+
+sys.path.append("/content/Covary-encoder/Active")
+import Covary_encoder
+ ```
 
 ## Reporting
 Comments and suggestions to improve Covary-encoder are welcome. If you find any bug or problem, please open an [issue](https://github.com/mahvin92/Covary-encoder/issues/new).
 
 ## Acknowledgements
-Covary-encoder is powered by TIPs and ChordexBio, made with Python, and tested using Google Colab ❤️
+Covary-encoder is powered by [TIPs](https://tips.chordexbio.com/) and [ChordexBio](https://chordexbio.com/), made with Python, and tested using Google Colab ❤️
