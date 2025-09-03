@@ -44,7 +44,7 @@ os.rename(filename, var_name)
 ### Run Covary-encoder
  ```
 # Feed your fasta file, containing the sequences to the Covary-encoder directory
-!mv /content/[your fasta-formatted input] /content/Covary-encoder/
+!mv /content/input_seq.fasta /content/Covary-encoder/
 %cd /content/Covary-encoder/
 !pip install /content/Covary-encoder/Active/codeenigma_runtime-*.whl
 
