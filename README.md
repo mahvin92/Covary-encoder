@@ -5,7 +5,7 @@ This repository hosts the obfuscated runtime modules for the Covary-encoder logi
 The Covary-encoder implements a proprietary sequence encoding logic using the Translator-Interpreter Pre-seeding for Variable-length Fragments (TIPs-VF). Covary-encoder is released as obfuscated runtime ONLY. Each release has a validity period (per quarter). After expiration, users must update to the latest runtime to continue using Covary and other Covary-encoder-dependent implementations, manually or programmatically.
 
 ## Encoder architecture
-The Covary-encoder was built on TIPs-VF developed by [De los Santos, 2025](https://doi.org/10.1101/2025.02.15.637782) for deep learning applications in synthetic biology. TIPs-VF is a _k-mer_-derived, non-overlapping, and frequency-independent encoding scheme. It represents genetic sequences based on the relative proximity and directional alignment of k-mer attributes while incorporating sequence, length, and positional awareness. TIPs-VF has demonstrated enhanced performance in truncation and fragmentation analysis, sequence homology detection, motif assessment, and splice junction identification using variable-length sequences.
+The Covary-encoder was built on TIPs-VF, developed by [De los Santos, 2025](https://doi.org/10.1101/2025.02.15.637782) for deep learning applications in synthetic biology. TIPs-VF is a _k-mer_-derived, non-overlapping, and frequency-independent encoding scheme. It represents genetic sequences based on the relative proximity and directional alignment of k-mer attributes while incorporating sequence, length, and positional awareness. TIPs-VF has demonstrated enhanced performance in truncation and fragmentation analysis, sequence homology detection, motif assessment, and splice junction identification using variable-length sequences.
 
 ![TIPs-VF model](https://github.com/user-attachments/assets/c4cee570-48e9-4d5a-9ed5-e2ef9e87b100)
 
@@ -15,7 +15,7 @@ Updates and improvements in Covary-encoder are released in a per quarter basis, 
 ## Obfuscation frequency
 As part of security and performance upgrades on Covary-encoder, obfuscation frequency will also occur in a per quarter basis, unless specified in an obfuscation report/release.
 
-## Sample implementation (_in Covary v2.0_)
+## Sample implementation (_in Covary v2.0 via Colab_)
 ### Clone
  ```
 # Clone Covary-encoder in Google Colab
@@ -32,6 +32,15 @@ import os
 os.mkdir("codeenigma_runtime")
 !mv /content/Covary-encoder/Active/__init__.py /content/Covary-encoder/Active/codeenigma_runtime
  ```
+### Upload your fasta file
+```
+import os
+from google.colab import files
+uploaded = files.upload()
+filename = list(uploaded.keys())[0]
+var_name = "input_seq.fasta" # -> this is a required input name
+os.rename(filename, var_name)
+```
 ### Run Covary-encoder
  ```
 # Feed your fasta file, containing the sequences to the Covary-encoder directory
@@ -51,4 +60,4 @@ import Covary_encoder
 Comments and suggestions to improve Covary-encoder are welcome. If you find any bug or problem, please open an [issue](https://github.com/mahvin92/Covary-encoder/issues/new).
 
 ## Acknowledgements
-Covary-encoder is powered by [TIPs](https://tips.chordexbio.com/) and [ChordexBio](https://chordexbio.com/), made with Python, and tested using Google Colab ❤️
+Covary-encoder is powered by [TIPs](https://tips.chordexbio.com/), [ChordexBio](https://chordexbio.com/) and [CodeEnigma](https://github.com/KrishnanSG/codeenigma), made with Python, and tested using Google Colab ❤️
