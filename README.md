@@ -1,6 +1,8 @@
 # Covary-encoder
 This repository hosts the obfuscated runtime modules for the Covary-encoder logic, powered by [TIPs-VF](https://github.com/mahvin92/TIPs-VF) and with first-level protection using [CodeEnigma](https://github.com/KrishnanSG/codeenigma).
 
+OBFD tag: 03/26
+
 ## About
 The Covary-encoder implements a proprietary sequence encoding logic using the Translator-Interpreter Pre-seeding for Variable-length Fragments (TIPs-VF). Covary-encoder is released as obfuscated runtime ONLY. Each release has a validity period (per quarter). After expiration, users must update to the latest runtime to continue using Covary and other Covary-encoder-dependent implementations, manually or programmatically.
 
